@@ -23,7 +23,7 @@ type HalykConfirmTransaction struct {
 	InvoiceID int64           `json:"invoice_id"`
 	Code      int             `json:"code"`
 	Amount    decimal.Decimal `json:"amount"`
-	Response  string          `json:"response"`
+	Response  null.JSON       `json:"response"`
 }
 
 func (s Storage) tx(ctx context.Context, fn func(tx *sql.Tx) error) error {
@@ -80,9 +80,12 @@ func (s Storage) ConfirmTransaction(ctx context.Context, data HalykConfirmTransa
 		if data.Amount != transaction.Amount {
 			return fmt.Errorf("amount of transaction is diffrent")
 		}
-
-		transaction.Status = enums.TransactionPaid
+		transaction.Data = data.Response
 		transaction.PaidAt = time.Now()
+
+		if data.Code == 200 {
+			transaction.Status = enums.TransactionPaid
+		}
 
 		_, err = transaction.Update(ctx, tx, boil.Infer())
 
