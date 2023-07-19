@@ -1,0 +1,24 @@
+output   = "models"
+wipe     = true
+no-tests = true
+
+pkgname = "models"
+
+
+[mysql]
+  dbname  = "prosklad"
+  host    = "localhost"
+  port    = 3306
+  user    = "user"
+  pass    = "prosklad"
+  sslmode = "false"
+
+ [[types]]
+   [types.match]
+     type = "types.Decimal"
+
+   [types.replace]
+     type = "decimal.Decimal"
+
+   [types.imports]
+     third_party = ['"github.com/shopspring/decimal"']

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/migrations/000001_init_company_balances.down.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/migrations/000001_init_company_balances.up.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/migrations/000002_init_company_balance_transaction.down.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/migrations/000002_init_company_balance_transaction.up.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/migrations/000003_init_services.down.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/migrations/000003_init_services.up.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/migrations/000004_init_company_carts.down.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/migrations/000004_init_company_carts.up.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/migrations/000005_init_company_cart_services.down.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/migrations/000005_init_company_cart_services.up.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/migrations/000006_init_company_services.down.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/migrations/000006_init_company_services.up.sql" dialect="MySQL" />
+  </component>
+</project>
