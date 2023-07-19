@@ -1,9 +1,8 @@
-package database
+package db
 
 import (
 	"database/sql"
 	"fmt"
-	_ "github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-mysql/driver"
 	"gitlab.com/binsabit/billing/config"
 )
 
@@ -18,6 +17,5 @@ func Connect(cfg config.Config) (*sql.DB, error) {
 	if err != nil {
 		return nil, err
 	}
-	//db = test
 	return dbConn, err
 }

@@ -5,16 +5,16 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"gitlab.com/binsabit/billing/config"
-	"gitlab.com/binsabit/billing/database"
+	"gitlab.com/binsabit/billing/db"
 )
 
 type Server struct {
 	config  config.Config
 	router  *fiber.App
-	storage *database.Storage
+	storage *db.Store
 }
 
-func NewServer(cfg config.Config, storage *database.Storage) (*Server, error) {
+func NewServer(cfg config.Config, storage *db.Store) (*Server, error) {
 	server := &Server{
 		config:  cfg,
 		storage: storage,

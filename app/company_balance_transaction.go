@@ -2,15 +2,15 @@ package app
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"gitlab.com/binsabit/billing/database"
+	"gitlab.com/binsabit/billing/db"
 	"log"
 )
 
-func (s *Server) TansactionDepositHalyk(ctx *fiber.Ctx) error {
+func (s Server) TransactionDepositHalyk(ctx *fiber.Ctx) error {
 
-	reqData := &database.HalykPayTransaction{}
+	reqData := db.HalykPayTransaction{}
 
-	if err := ctx.BodyParser(reqData); err != nil {
+	if err := ctx.BodyParser(&reqData); err != nil {
 		log.Printf("wrong request data: %v", err)
 
 		return ctx.Status(fiber.StatusBadRequest).JSON(fiber.Map{

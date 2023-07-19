@@ -3,7 +3,7 @@ package main
 import (
 	"gitlab.com/binsabit/billing/app"
 	"gitlab.com/binsabit/billing/config"
-	"gitlab.com/binsabit/billing/database"
+	"gitlab.com/binsabit/billing/db"
 	"log"
 	"os"
 )
@@ -11,13 +11,13 @@ import (
 func main() {
 	cfg := config.LoadConfig()
 
-	db, err := database.Connect(cfg)
+	conn, err := db.Connect(cfg)
 	if err != nil {
-		log.Printf("could not connect to database: %v", err)
+		log.Printf("could not connect to models: %v", err)
 		os.Exit(0)
 	}
-	defer db.Close()
-	storage := database.NewStorage(db)
+	defer conn.Close()
+	storage := db.NewStore(conn)
 
 	server, err := app.NewServer(cfg, storage)
 
