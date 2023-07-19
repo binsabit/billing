@@ -9,10 +9,10 @@ import (
 )
 
 type HalykPayTransaction struct {
-	CompanyID  int64 `json:"company_id"`
-	SenderType int32 `json:"sender_type"`
-	SenderID   int64 `json:"sender_id"`
-	Amount     int64 `json:"amount"`
+	CompanyID  int64  `json:"company_id"`
+	SenderType int32  `json:"sender_type"`
+	SenderID   int64  `json:"sender_id"`
+	Amount     uint64 `json:"amount"`
 }
 
 type HalykConfirmTransaction struct {
@@ -28,7 +28,7 @@ func (s *Store) CreateTransaction(ctx context.Context, transaction HalykPayTrans
 		result, err := q.CreateTransaction(ctx, models.CreateTransactionParams{
 			CompanyID:  transaction.CompanyID,
 			SenderType: transaction.SenderType,
-			Amount:     transaction.Amount,
+			Amount:     int64(transaction.Amount),
 			SenderID: sql.NullInt64{
 				Int64: transaction.SenderID,
 				Valid: transaction.SenderType != enums.Kaspi || transaction.SenderType != enums.KaspiInvoice || transaction.SenderType != enums.Qiwi,

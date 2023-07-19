@@ -19,7 +19,7 @@ type CompanyBalanceTransaction struct {
 	ID         int64           `json:"id"`
 	CompanyID  int64           `json:"company_id"`
 	Type       int32           `json:"type"`
-	Amount     int64           `json:"amount"`
+	Amount     uint64          `json:"amount"`
 	Data       json.RawMessage `json:"data"`
 	SenderType int32           `json:"sender_type"`
 	SenderID   sql.NullInt64   `json:"sender_id"`

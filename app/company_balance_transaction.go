@@ -30,3 +30,7 @@ func (s Server) TransactionDepositHalyk(ctx *fiber.Ctx) error {
 		"invoice_id": id,
 	})
 }
+
+func (s Server) TransactionDepositVerifyHalyk(ctx *fiber.Ctx) error {
+	return nil
+}

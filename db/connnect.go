@@ -3,6 +3,7 @@ package db
 import (
 	"database/sql"
 	"fmt"
+	_ "github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-mysql/driver"
 	"gitlab.com/binsabit/billing/config"
 )
 

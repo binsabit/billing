@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS  company_balance_transactions(
     id bigint not null auto_increment primary key,
     company_id bigint not null,
     type int not null,
-    amount bigint not null default 0,
+    amount bigint unsigned not null default 0,
     data json,
     sender_type smallint not null,
     sender_id bigint,

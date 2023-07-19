@@ -4,19 +4,19 @@ go 1.20
 
 require (
 	github.com/bytedance/sonic v1.9.2
-	github.com/friendsofgo/errors v0.9.2
 	github.com/gofiber/fiber/v2 v2.48.0
-	github.com/shopspring/decimal v1.3.1
 	github.com/spf13/viper v1.16.0
 	github.com/volatiletech/null/v8 v8.1.2
 	github.com/volatiletech/sqlboiler/v4 v4.14.2
-	github.com/volatiletech/strmangle v0.0.5
+
 )
 
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
+	github.com/friendsofgo/errors v0.9.2 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
+	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/gofrs/uuid v4.2.0+incompatible // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
@@ -40,6 +40,7 @@ require (
 	github.com/valyala/tcplisten v1.0.0 // indirect
 	github.com/volatiletech/inflect v0.0.1 // indirect
 	github.com/volatiletech/randomize v0.0.1 // indirect
+	github.com/volatiletech/strmangle v0.0.4 // indirect
 	golang.org/x/arch v0.0.0-20210923205945-b76863e36670 // indirect
 	golang.org/x/sys v0.10.0 // indirect
 	golang.org/x/text v0.9.0 // indirect
