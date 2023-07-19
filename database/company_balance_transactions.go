@@ -85,6 +85,8 @@ func (s Storage) ConfirmTransaction(ctx context.Context, data HalykConfirmTransa
 
 		if data.Code == 200 {
 			transaction.Status = enums.TransactionPaid
+		} else if data.Code == 400 {
+			transaction.Status = enums.TransactionPaymentError
 		}
 
 		_, err = transaction.Update(ctx, tx, boil.Infer())
